@@ -1,0 +1,48 @@
+/* Community Page Specific Styles */
+.posts-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-track {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    width: 280px;
+    min-width: 280px;
+    margin: 0 10px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+}
+
+.post-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+/* Kill any Bootstrap carousel stuff */
+.carousel-inner,
+.carousel-item {
+    display: block !important;
+    transform: none !important;
+    transition: none !important;
+} 
