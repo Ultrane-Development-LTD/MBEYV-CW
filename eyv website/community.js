@@ -1,24 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Just initialize the items to be visible
-    const items = document.querySelectorAll('.carousel-item');
     const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
     
-    let currentIndex = Math.floor(items.length / 2); // Start with middle item active
+    // Scroll functions
+    const scrollAmount = 300; // Adjust this value as needed
     
-    function updateActiveState() {
-        items.forEach((item, index) => {
-            item.classList.toggle('active', index === currentIndex);
-        });
-    }
-    
-    // Click handlers for items
-    items.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            currentIndex = index;
-            updateActiveState();
+    // Add click handlers to existing buttons
+    document.querySelector('.carousel-nav.prev').addEventListener('click', () => {
+        track.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
         });
     });
     
-    // Initialize
-    updateActiveState();
+    document.querySelector('.carousel-nav.next').addEventListener('click', () => {
+        track.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Simple active state based on scroll position
+    function updateActiveItem() {
+        const scrollLeft = track.scrollLeft;
+        const containerWidth = track.offsetWidth;
+        const centerPosition = scrollLeft + (containerWidth / 2);
+        
+        items.forEach(item => {
+            const itemLeft = item.offsetLeft;
+            const itemWidth = item.offsetWidth;
+            const itemCenter = itemLeft + (itemWidth / 2);
+            
+            if (Math.abs(itemCenter - centerPosition) < itemWidth / 2) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+    
+    track.addEventListener('scroll', updateActiveItem);
+    updateActiveItem(); // Initial state
 }); 
