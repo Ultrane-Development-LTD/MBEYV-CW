@@ -5,9 +5,9 @@
 
 /* Global Styles */
 :root {
-    --primary-color: #1a1a1a;
+    --primary-color: #2b2b2b;
     --secondary-color: #f8f9fa;
-    --accent-color: #0066cc;
+    --accent-color: #a9a9e9;
     --heading-font: 'DM Serif Display', serif;
     --subheading-font: 'Montserrat', sans-serif;
     --body-font: 'IBM Plex Mono', monospace;
@@ -864,9 +864,9 @@ body {
 /* Add these styles for the bottom hero elements */
 .hero-bottom {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 15%;
+    left: 5%;
+    right: 5%;
     padding: 4rem;
     display: flex;
     justify-content: space-between;
@@ -902,6 +902,7 @@ body {
 
 @media (max-width: 768px) {
     .hero-bottom {
+        bottom: 30%;
         padding: 2rem;
         flex-direction: column;
         gap: 2rem;
@@ -1539,5 +1540,266 @@ h1, h2, h3, h4, h5, h6 {
     .carousel-container {
         width: 95%;
         padding: 0 30px;
+    }
+}
+
+/* Benefits Carousel Styles */
+#benefitsCarousel {
+    height: 100vh;
+    background-color: var(--secondary-color);
+}
+
+#benefitsCarousel .carousel-item {
+    height: 100vh;
+}
+
+#benefitsCarousel .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.8);
+}
+
+#benefitsCarousel .carousel-caption {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#benefitsCarousel .carousel-caption i {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+#benefitsCarousel .carousel-caption h2 {
+    font-family: var(--heading-font);
+    margin-bottom: 1.5rem;
+}
+
+#benefitsCarousel .carousel-caption p {
+    font-family: var(--subheading-font);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* What is Eyv Section */
+.what-is-eyv {
+    padding: 120px 0;
+    background-color: white;
+}
+
+.what-is-eyv .overline {
+    font-family: var(--subheading-font);
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+}
+
+.feature-card {
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    padding: 3rem 2rem;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-family: var(--subheading-font);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    #benefitsCarousel .carousel-caption {
+        padding: 2rem;
+        width: 90%;
+    }
+    
+    #benefitsCarousel .carousel-caption h2 {
+        font-size: 2rem;
+    }
+    
+    .what-is-eyv {
+        padding: 80px 0;
+    }
+}
+
+/* Carousel Styles */
+#benefits-carousel .carousel-item {
+    position: relative;
+}
+
+#benefits-carousel .carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    padding: 2rem;
+}
+
+#benefits-carousel .carousel-caption h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+#benefits-carousel .carousel-caption p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#benefits-carousel .carousel-caption i {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+/* What is eyv Section Styles */
+#what-is-eyv {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+}
+
+#what-is-eyv i {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+#what-is-eyv h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#what-is-eyv p {
+    color: #666;
+    line-height: 1.6;
+}
+
+#what-is-eyv .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* FAQ Page Styles */
+.faq-content .accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.faq-content .accordion-button {
+    background-color: transparent;
+    font-family: var(--subheading-font);
+    font-weight: 500;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.faq-content .accordion-button:not(.collapsed) {
+    color: var(--primary-color);
+    background-color: rgba(0,0,0,0.02);
+    box-shadow: none;
+}
+
+.faq-content .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,0.1);
+}
+
+.faq-content .accordion-body {
+    padding: 1.5rem;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.faq-content .accordion-body ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.faq-content .accordion-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+.faq-content .accordion-body a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+
+.faq-content .accordion-body a:hover {
+    opacity: 0.8;
+}
+
+/* Policy Page Styles */
+.policy-content {
+    font-family: var(--body-font);
+    color: #333;
+}
+
+.policy-section h2 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.policy-section h3 {
+    font-family: var(--subheading-font);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.policy-list {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.policy-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.policy-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: opacity 0.3s ease;
+}
+
+.policy-section a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .policy-content {
+        font-size: 0.95rem;
+    }
+    
+    .policy-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .policy-section h3 {
+        font-size: 1.2rem;
     }
 }
